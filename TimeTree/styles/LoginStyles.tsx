@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {width, height, totalSize} from 'react-native-dimension';
 export const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    width: null,
-    height: null,
+    width: 0,
+    height: 0,
   },
   imageSmall: {
     flexDirection: 'column',
@@ -46,14 +45,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: 250,
     height: 250,
-    marginBottom: 50,
-  },
-  imageSmall: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 100,
-    height: 100,
     marginBottom: 50,
   },
   buttonContainer: {

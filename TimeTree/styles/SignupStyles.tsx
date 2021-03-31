@@ -1,15 +1,14 @@
 import {StyleSheet} from 'react-native';
-import {width, height, totalSize} from 'react-native-dimension';
 
 export const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    width: null,
-    height: null,
+    width: 0,
+    height: 0,
   },
   container: {
     flex: 1,
-    paddingTop: height / 4,
+    paddingTop: 100,
     justifyContent: 'center',
     flexDirection: 'column',
     backgroundColor: 'white',
@@ -22,14 +21,14 @@ export const styles = StyleSheet.create({
     width: 15,
     height: 15,
   },
-  image: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: width / 2,
-    height: width / 2,
-    marginBottom: 50,
-  },
+  // image: {
+  //   flexDirection: 'column',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   width: width / 2,
+  //   height: width / 2,
+  //   marginBottom: 50,
+  // },
   buttonContainer: {
     marginTop: 10,
     marginLeft: 40,
@@ -173,5 +172,5 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     fontWeight: 'bold',
-  }
+  },
 });

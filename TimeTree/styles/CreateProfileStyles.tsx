@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    width: null,
-    height: null,
+    width: 0,
+    height: 0,
   },
   container: {
     flex: 2,
@@ -23,7 +23,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
+  a_logo: {
+    width: 15,
+    height: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    marginRight: 15,
+  },
   image: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -75,8 +82,6 @@ export const styles = StyleSheet.create({
   sheetHeader: {
     backgroundColor: 'white',
     color: '#2FCC87',
-    marginTop: 5,
-    marginHorizontal: 10,
     alignItems: 'center',
     flex: 1,
   },
@@ -107,8 +112,8 @@ export const styles = StyleSheet.create({
   },
   modalButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    backgroundColor: '#f8f8f8',
   },
   modalButtonWhite: {
     backgroundColor: 'white',
@@ -120,6 +125,10 @@ export const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
     color: '#8C8C8C',
+  },
+  textDark: {
+    fontWeight: 'bold',
+    color: '#92E1BF',
   },
   textGreen: {
     backgroundColor: 'white',
@@ -139,6 +148,7 @@ export const styles = StyleSheet.create({
   textinput: {
     backgroundColor: '#f8f8f8',
     borderColor: '#f8f8f8',
+    color: '#8C8C8C',
     borderWidth: 1,
     height: 53,
     fontWeight: 'bold',
@@ -167,7 +177,16 @@ export const styles = StyleSheet.create({
     left: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    opacity: 0.9,
+    opacity: 0.7,
     backgroundColor: 'gray',
+    padding: 10,
+  },
+  imageSmall: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 100,
+    height: 100,
+    marginBottom: 50,
   },
 });
