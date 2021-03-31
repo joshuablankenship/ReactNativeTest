@@ -31,7 +31,6 @@ export default class Signup extends Component<Props, MyState> {
     };
   }
   validate = (text: string) => {
-    console.log(text);
     let reg = /^\w+([\\.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (reg.test(text) === false) {
       return false;
@@ -57,8 +56,6 @@ export default class Signup extends Component<Props, MyState> {
       emailError = 'Please Enter a valid email address';
       passwordError = '';
     }
-    console.log(this.state.password + this.state.errorEmail);
-
     this.setState({errorEmail: emailError, errorPassword: passwordError});
 
     if (!hasErrorsEmail && !hasErrorsPassword) {
