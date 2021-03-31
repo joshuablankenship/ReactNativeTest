@@ -1,23 +1,34 @@
 import React, {Component} from 'react';
 import {Switch} from 'react-native';
 import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import RBSheet from 'react-native-raw-bottom-sheet';
 import {styles} from '../styles/CreateProfileStyles';
 import MyDatePicker from '../components/DatePicker';
 interface Props {
   navigation: any;
+  openProfileSheet: any;
+  closeProfileSheet: any;
+  closeSignupSheet: any;
+  closeLoginSheet: any;
 }
-export default class CreateProfile extends Component<Props> {
-  constructor(props) {
+interface State {
+  name: string;
+  password: string;
+  isPopupTrue: boolean;
+  displayBirthday: boolean;
+  birthday: string;
+}
+
+export default class CreateProfile extends Component<Props, State> {
+  constructor(props: Props | Readonly<Props>) {
     super(props);
     this.state = {
       name: '',
       password: '',
-      isPopupTrue: true,
-      birthdaySaved: false,
+      isPopupTrue: false,
+      displayBirthday: false,
+      birthday: 'Not Set',
     };
   }
-  componentDidMount() {}
   _onPressButtonGoogle = async () => {
     this.props.navigation.navigate('Main');
   };
@@ -32,9 +43,15 @@ export default class CreateProfile extends Component<Props> {
   };
   _toggle = () => {
     this.setState(prevState => ({
-      birthdaySaved: !prevState.birthdaySaved,
+      displayBirthday: !prevState.displayBirthday,
     }));
   };
+  setBirthday = (text: string) => {
+    this.setState({
+      birthday: text,
+    });
+  };
+
   render() {
     return (
       <View style={styles.sheetHeader}>
@@ -47,44 +64,79 @@ export default class CreateProfile extends Component<Props> {
           <View style={styles.textinputLight}>
             <Text style={styles.text}>Name</Text>
           </View>
-          <TextInput
-            style={styles.textinput}
-            placeholder="Untitled"
-            value={this.state.name}
-            autoCorrect={false}
-            onChangeText={text => this.setState({name: text})}
-          />
+          <View style={styles.modalButtons}>
+            <TextInput
+              style={styles.textinput}
+              placeholder="Untitled"
+              value={this.state.name}
+              autoCorrect={false}
+              onChangeText={text => this.setState({name: text})}
+            />
+            {this.state.name.length > 0 ? (
+              <TouchableOpacity onPress={() => this.setState({name: ''})}>
+                <Image
+                  style={styles.a_logo}
+                  source={require('../assets/images/close-button-png.png')}
+                />
+              </TouchableOpacity>
+            ) : (
+              <View />
+            )}
+          </View>
           <View style={styles.textinputLight}>
             <Text style={styles.text}>Birthday</Text>
           </View>
-          <MyDatePicker />
+          <MyDatePicker
+            birthday={this.state.birthday}
+            setBirthday={this.setBirthday}
+          />
           <View style={styles.textinput}>
             <Text style={styles.text}>Display Birthday</Text>
             <Switch
               style={styles.switchStyle}
               trackColor={{true: '#2FCC87', false: 'grey'}}
               thumbColor={'#f8f8f8'}
-              backgroundColor={'#f8f8f8'}
               ios_backgroundColor={
-                this.state.birthdaySaved ? '#2FCC87' : 'gray'
+                this.state.displayBirthday ? '#2FCC87' : 'gray'
               }
               onValueChange={this._toggle}
-              value={this.state.birthdaySaved}
+              value={this.state.displayBirthday}
             />
           </View>
         </View>
         <View style={styles.bottom}>
           <TouchableOpacity
+            disabled={
+              this.state.name.length === 0 || this.state.birthday === 'Not Set'
+            }
             style={styles.buttonGreen}
             onPress={() => {
-              this.props.navigation.navigate('Main');
-              this._closeProfileSheet();
-              this.props.closeSignupSheet();
-              this.props.closeLoginSheet();
+              this.setState({isPopupTrue: true});
+              setTimeout(() => {
+                this._closeProfileSheet();
+                this.props.closeSignupSheet();
+                this.props.closeLoginSheet();
+              }, 1000);
             }}>
-            <Text style={styles.buttonText}>Confirm</Text>
+            <Text
+              style={
+                this.state.name.length === 0 ||
+                this.state.birthday === 'Not Set'
+                  ? styles.textDark
+                  : styles.buttonText
+              }>
+              Confirm
+            </Text>
           </TouchableOpacity>
         </View>
+        {this.state.isPopupTrue && (
+          <View style={styles.overlay}>
+            <Image
+              style={styles.imageSmall}
+              source={require('../assets/images/loading.gif')}
+            />
+          </View>
+        )}
       </View>
     );
   }
