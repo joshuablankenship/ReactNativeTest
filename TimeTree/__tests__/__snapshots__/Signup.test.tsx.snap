@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Signup Screen It should match initial snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "color": "#2FCC87",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginHorizontal": 10,
+        "marginTop": 5,
+        "padding": 12,
+      }
+    }
+  >
+    <ForwardRef
+      onPress={[Function]}
+      style={Object {}}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/images/x.png",
+          }
+        }
+        style={
+          Object {
+            "height": 15,
+            "width": 15,
+          }
+        }
+      />
+    </ForwardRef>
+    <ForwardRef
+      onPress={[Function]}
+      style={Object {}}
+    >
+      <Text
+        style={Object {}}
+      >
+         Later
+      </Text>
+    </ForwardRef>
+  </View>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "marginBottom": 50,
+        "marginTop": 20,
+        "textAlign": "center",
+      }
+    }
+  >
+     Sign up
+  </Text>
+  <View
+    style={
+      Object {
+        "marginLeft": 40,
+        "marginRight": 40,
+        "marginTop": 10,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="Email Address"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "fontWeight": "bold",
+          "height": 53,
+          "justifyContent": "center",
+          "paddingHorizontal": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      style={
+        Object {
+          "color": "red",
+          "fontWeight": "bold",
+          "paddingHorizontal": 10,
+          "paddingVertical": 5,
+        }
+      }
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="8 - 32 character password"
+      rejectResponderTermination={true}
+      secureTextEntry={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "fontWeight": "bold",
+          "height": 53,
+          "justifyContent": "center",
+          "paddingHorizontal": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      style={
+        Object {
+          "color": "red",
+          "fontWeight": "bold",
+          "paddingHorizontal": 10,
+          "paddingVertical": 5,
+        }
+      }
+    />
+    <ForwardRef
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2FCC87",
+          "borderRadius": 5,
+          "color": "white",
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "marginBottom": 10,
+          "padding": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Create Account
+      </Text>
+    </ForwardRef>
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontWeight": "bold",
+          "marginBottom": 40,
+          "marginTop": 30,
+          "textAlign": "center",
+        }
+      }
+    >
+      or
+    </Text>
+    <ForwardRef
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#3A5A97",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "padding": 12,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/images/facebook_logo.png",
+          }
+        }
+        style={
+          Object {
+            "height": 25,
+            "width": 25,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "bold",
+          }
+        }
+      >
+         Login with Facebook
+      </Text>
+    </ForwardRef>
+    <ForwardRef
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "black",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "padding": 12,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/images/apple_logo.png",
+          }
+        }
+        style={
+          Object {
+            "height": 15,
+            "width": 15,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "bold",
+          }
+        }
+      >
+         Sign in with Apple
+      </Text>
+    </ForwardRef>
+  </View>
+  <View>
+    <RBSheet
+      animationType="none"
+      closeDuration={200}
+      closeOnDragDown={false}
+      closeOnPressBack={true}
+      closeOnPressMask={true}
+      customStyles={
+        Object {
+          "container": Object {
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+          },
+        }
+      }
+      dragFromTopOnly={false}
+      height={800}
+      keyboardAvoidingViewEnabled={true}
+      minClosingHeight={0}
+      onClose={null}
+      onOpen={null}
+      openDuration={250}
+    >
+      <CreateProfile
+        closeProfileSheet={[Function]}
+        closeSignupSheet={[Function]}
+        openProfileSheet={[Function]}
+      />
+    </RBSheet>
+  </View>
+</View>
+`;

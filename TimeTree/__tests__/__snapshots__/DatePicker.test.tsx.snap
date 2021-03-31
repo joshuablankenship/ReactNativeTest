@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test DatePicker Component It should match initial snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      onPress={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f8f8f8",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "color": "#8C8C8C",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "height": 53,
+          "justifyContent": "space-between",
+          "padding": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "center",
+        }
+      }
+    />
+    <ForwardRef
+      onPress={[Function]}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/images/close-button-png.png",
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 15,
+            "justifyContent": "center",
+            "marginRight": 15,
+            "marginTop": 20,
+            "width": 15,
+          }
+        }
+      />
+    </ForwardRef>
+  </View>
+  <View>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      presentationStyle="overFullScreen"
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "shadowOffset": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 1,
+            "shadowRadius": 200,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "marginTop": "70%",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#2FCC87",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "padding": 20,
+                  "textAlign": "center",
+                }
+              }
+            />
+          </View>
+          <View />
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <Picker
+              display="spinner"
+              mode="date"
+              onChange={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "white",
+                }
+              }
+              testID="dateTimePicker"
+              value={2020-08-21T23:15:30.000Z}
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#f8f8f8",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <ForwardRef
+                onPress={[Function]}
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "color": "#8C8C8C",
+                      "fontSize": 20,
+                      "fontWeight": "bold",
+                      "padding": 10,
+                    }
+                  }
+                >
+                  Cancel
+                </Text>
+              </ForwardRef>
+              <ForwardRef
+                onPress={[Function]}
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "color": "#2FCC87",
+                      "fontSize": 20,
+                      "fontWeight": "bold",
+                      "padding": 10,
+                    }
+                  }
+                >
+                  Confirm
+                </Text>
+              </ForwardRef>
+            </View>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  </View>
+</View>
+`;

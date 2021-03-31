@@ -1,7 +1,7 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import Bottom from '../containers/Bottom';
+import {Image, TouchableOpacity} from 'react-native';
+import Login from '../containers/Login';
 import Signup from '../containers/Signup';
 const createTestProps = (props: any) => ({
   navigation: {
@@ -10,10 +10,16 @@ const createTestProps = (props: any) => ({
   closeLoginSheet: jest.fn(),
   ...props,
 });
-describe('Test Bottom Screen', () => {
+jest.mock('react-native-splash-screen', () => {
+  return {
+    hide: jest.fn(),
+    show: jest.fn(),
+  };
+});
+describe('Test Login Screen', () => {
   let wrapper: ShallowWrapper;
   let props: any;
-  wrapper = shallow(<Bottom {...props} />);
+  wrapper = shallow(<Login {...props} />);
   props = createTestProps({
     navigate: () => {},
     closeLoginSheet: () => {},
@@ -22,7 +28,10 @@ describe('Test Bottom Screen', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('It should display three touchable opacity components', () => {
-    expect(wrapper.find(TouchableOpacity).length).toEqual(3);
+    expect(wrapper.find(TouchableOpacity).length).toEqual(2);
+  });
+  it('It should display one logo image', () => {
+    expect(wrapper.find(Image).length).toEqual(1);
   });
   it('It should contain one sign up view', () => {
     expect(wrapper.find(Signup).length).toEqual(1);

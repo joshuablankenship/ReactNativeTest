@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App It should match initial snapshot 1`] = `
+<ForwardRef(NavigationContainer)>
+  <StackNavigator>
+    <Screen
+      component={[Function]}
+      name="Login"
+      options={
+        Object {
+          "headerShown": false,
+        }
+      }
+    />
+  </StackNavigator>
+</ForwardRef(NavigationContainer)>
+`;
+
+exports[`Test Login Screen It should match initial snapshot 1`] = `
+<ForwardRef(NavigationContainer)>
+  <StackNavigator>
+    <Screen
+      component={[Function]}
+      name="Login"
+      options={
+        Object {
+          "headerShown": false,
+        }
+      }
+    />
+  </StackNavigator>
+</ForwardRef(NavigationContainer)>
+`;

@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Create Profile Screen It should match initial snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "color": "#2FCC87",
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignItems": "center",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "justifyContent": "center",
+        "marginTop": 20,
+        "textAlign": "center",
+      }
+    }
+  >
+     Edit Profile
+  </Text>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/images/profile.png",
+      }
+    }
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 200,
+        "justifyContent": "center",
+        "marginBottom": 50,
+        "marginTop": 30,
+        "width": 200,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginTop": 10,
+        "width": "75%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "backgroundColor": "white",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "fontWeight": "bold",
+          "height": 53,
+          "padding": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#8C8C8C",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Name
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#f8f8f8",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        autoCorrect={false}
+        onChangeText={[Function]}
+        placeholder="Untitled"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#f8f8f8",
+            "borderColor": "#f8f8f8",
+            "borderWidth": 1,
+            "color": "#8C8C8C",
+            "flexDirection": "row",
+            "fontWeight": "bold",
+            "height": 53,
+            "justifyContent": "space-between",
+            "padding": 10,
+            "paddingTop": 15,
+            "textAlignVertical": "center",
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "backgroundColor": "white",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "fontWeight": "bold",
+          "height": 53,
+          "padding": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#8C8C8C",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Birthday
+      </Text>
+    </View>
+    <MyDatePicker
+      birthday="Not Set"
+      setBirthday={[Function]}
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#f8f8f8",
+          "borderColor": "#f8f8f8",
+          "borderWidth": 1,
+          "color": "#8C8C8C",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "height": 53,
+          "justifyContent": "space-between",
+          "padding": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#8C8C8C",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Display Birthday
+      </Text>
+      <Switch
+        ios_backgroundColor="gray"
+        onValueChange={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "transform": Array [
+              Object {
+                "scaleX": 0.7,
+              },
+              Object {
+                "scaleY": 0.6,
+              },
+            ],
+          }
+        }
+        thumbColor="#f8f8f8"
+        trackColor={
+          Object {
+            "false": "grey",
+            "true": "#2FCC87",
+          }
+        }
+        value={false}
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "justifyContent": "flex-end",
+        "width": "150%",
+      }
+    }
+  >
+    <ForwardRef
+      disabled={true}
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2FCC87",
+          "borderRadius": 5,
+          "color": "white",
+          "padding": 15,
+          "textAlign": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#92E1BF",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Confirm
+      </Text>
+    </ForwardRef>
+  </View>
+</View>
+`;

@@ -4,116 +4,115 @@ exports[`Test Login Screen It should match initial snapshot 1`] = `
 <View
   style={
     Object {
-      "marginLeft": 40,
-      "marginRight": 40,
-      "marginTop": 10,
+      "backgroundColor": "white",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 200,
     }
   }
 >
-  <ForwardRef
+  <View
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#2FCC87",
-        "borderRadius": 5,
-        "color": "white",
-        "flexDirection": "row",
-        "justifyContent": "space-evenly",
-        "marginBottom": 10,
-        "padding": 12,
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "white",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      Sign in via email
-    </Text>
-  </ForwardRef>
-  <ForwardRef
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#3A5A97",
-        "borderRadius": 5,
-        "flexDirection": "row",
+        "flex": 1,
         "justifyContent": "center",
-        "marginBottom": 10,
-        "padding": 12,
+        "margin": 20,
       }
     }
   >
     <Image
       source={
         Object {
-          "testUri": "../../../assets/images/facebook_logo.png",
+          "testUri": "../../../assets/images/logo.png",
         }
       }
       style={
         Object {
-          "height": 25,
-          "width": 25,
+          "alignItems": "center",
+          "flexDirection": "column",
+          "height": 250,
+          "justifyContent": "center",
+          "marginBottom": 50,
+          "width": 250,
         }
       }
     />
-    <Text
-      style={
-        Object {
-          "color": "white",
-          "fontWeight": "bold",
-        }
-      }
-    >
-       Login with Facebook
-    </Text>
-  </ForwardRef>
-  <ForwardRef
+  </View>
+  <View
     style={
       Object {
-        "alignItems": "center",
-        "backgroundColor": "black",
-        "borderRadius": 5,
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "marginBottom": 10,
-        "padding": 12,
+        "marginTop": 50,
       }
     }
   >
-    <Image
-      source={
-        Object {
-          "testUri": "../../../assets/images/apple_logo.png",
-        }
-      }
+    <ForwardRef
+      onPress={[Function]}
       style={
         Object {
-          "height": 15,
-          "width": 15,
-        }
-      }
-    />
-    <Text
-      style={
-        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2FCC87",
+          "borderRadius": 5,
           "color": "white",
-          "fontWeight": "bold",
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "marginBottom": 10,
+          "marginLeft": 40,
+          "marginRight": 40,
+          "padding": 12,
         }
       }
     >
-       Sign in with Apple
-    </Text>
-  </ForwardRef>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Login
+      </Text>
+    </ForwardRef>
+    <ForwardRef
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#2FCC87",
+          "borderRadius": 5,
+          "borderWidth": 0.25,
+          "color": "#2FCC87",
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "marginBottom": 10,
+          "marginLeft": 40,
+          "marginRight": 40,
+          "padding": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#2FCC87",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Get Started
+      </Text>
+    </ForwardRef>
+  </View>
   <View
     style={
       Object {
         "alignItems": "center",
         "justifyContent": "center",
+        "marginLeft": 40,
+        "marginRight": 40,
       }
     }
   >
@@ -124,23 +123,41 @@ exports[`Test Login Screen It should match initial snapshot 1`] = `
         }
       }
     >
-      If you don't have an acount,
+      By selecting one or the other you are agreeing to our
        
       <Text
-        onPress={[Function]}
         style={
           Object {
             "alignItems": "center",
-            "color": "black",
+            "color": "#2FCC87",
             "flex": -1,
             "flexDirection": "row",
             "fontWeight": "bold",
             "justifyContent": "center",
             "marginTop": 5,
+            "textDecorationLine": "underline",
           }
         }
       >
-        create one
+        Terms of Service
+      </Text>
+       
+      & 
+      <Text
+        style={
+          Object {
+            "alignItems": "center",
+            "color": "#2FCC87",
+            "flex": -1,
+            "flexDirection": "row",
+            "fontWeight": "bold",
+            "justifyContent": "center",
+            "marginTop": 5,
+            "textDecorationLine": "underline",
+          }
+        }
+      >
+        Privacy Policy 
       </Text>
       .
     </Text>
@@ -159,7 +176,7 @@ exports[`Test Login Screen It should match initial snapshot 1`] = `
     <RBSheet
       animationType="none"
       closeDuration={200}
-      closeOnDragDown={false}
+      closeOnDragDown={true}
       closeOnPressBack={true}
       closeOnPressMask={true}
       customStyles={
@@ -171,18 +188,58 @@ exports[`Test Login Screen It should match initial snapshot 1`] = `
         }
       }
       dragFromTopOnly={false}
-      height={800}
+      height={300}
       keyboardAvoidingViewEnabled={true}
       minClosingHeight={0}
       onClose={null}
       onOpen={null}
       openDuration={250}
     >
-      <Signup
-        closeSignupSheet={[Function]}
-        openSignupSheet={[Function]}
+      <Bottom
+        closeLoginSheet={[Function]}
       />
     </RBSheet>
+    <View />
+    <View
+      style={
+        Object {
+          "backgroundColor": "white",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "paddingTop": 200,
+        }
+      }
+    >
+      <RBSheet
+        animationType="none"
+        closeDuration={200}
+        closeOnDragDown={false}
+        closeOnPressBack={true}
+        closeOnPressMask={true}
+        customStyles={
+          Object {
+            "container": Object {
+              "borderTopLeftRadius": 10,
+              "borderTopRightRadius": 10,
+            },
+          }
+        }
+        dragFromTopOnly={false}
+        height={800}
+        keyboardAvoidingViewEnabled={true}
+        minClosingHeight={0}
+        onClose={null}
+        onOpen={null}
+        openDuration={250}
+      >
+        <Signup
+          closeLoginSheet={[Function]}
+          closeSignupSheet={[Function]}
+          openSignupSheet={[Function]}
+        />
+      </RBSheet>
+    </View>
   </View>
 </View>
 `;

@@ -1,8 +1,7 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import Bottom from '../containers/Bottom';
-import Signup from '../containers/Signup';
+import {Image, Switch, TouchableOpacity} from 'react-native';
+import CreateProfile from '../containers/CreateProfile';
 const createTestProps = (props: any) => ({
   navigation: {
     navigate: jest.fn(),
@@ -10,10 +9,10 @@ const createTestProps = (props: any) => ({
   closeLoginSheet: jest.fn(),
   ...props,
 });
-describe('Test Bottom Screen', () => {
+describe('Test Create Profile Screen', () => {
   let wrapper: ShallowWrapper;
   let props: any;
-  wrapper = shallow(<Bottom {...props} />);
+  wrapper = shallow(<CreateProfile {...props} />);
   props = createTestProps({
     navigate: () => {},
     closeLoginSheet: () => {},
@@ -22,9 +21,12 @@ describe('Test Bottom Screen', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('It should display three touchable opacity components', () => {
-    expect(wrapper.find(TouchableOpacity).length).toEqual(3);
+    expect(wrapper.find(TouchableOpacity).length).toEqual(1);
   });
-  it('It should contain one sign up view', () => {
-    expect(wrapper.find(Signup).length).toEqual(1);
+  it('It should display one profile image', () => {
+    expect(wrapper.find(Image).length).toEqual(1);
+  });
+  it('It should contain one Switch', () => {
+    expect(wrapper.find(Switch).length).toEqual(1);
   });
 });

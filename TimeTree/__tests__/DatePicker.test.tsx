@@ -1,8 +1,8 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import Bottom from '../containers/Bottom';
-import Signup from '../containers/Signup';
+import DatePicker from '../components/DatePicker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 const createTestProps = (props: any) => ({
   navigation: {
     navigate: jest.fn(),
@@ -10,10 +10,10 @@ const createTestProps = (props: any) => ({
   closeLoginSheet: jest.fn(),
   ...props,
 });
-describe('Test Bottom Screen', () => {
+describe('Test DatePicker Component', () => {
   let wrapper: ShallowWrapper;
   let props: any;
-  wrapper = shallow(<Bottom {...props} />);
+  wrapper = shallow(<DatePicker {...props} />);
   props = createTestProps({
     navigate: () => {},
     closeLoginSheet: () => {},
@@ -24,7 +24,7 @@ describe('Test Bottom Screen', () => {
   it('It should display three touchable opacity components', () => {
     expect(wrapper.find(TouchableOpacity).length).toEqual(3);
   });
-  it('It should contain one sign up view', () => {
-    expect(wrapper.find(Signup).length).toEqual(1);
+  it('It should contain a DateTimePicker', () => {
+    expect(wrapper.find(DateTimePicker).length).toEqual(1);
   });
 });
