@@ -4,11 +4,13 @@ import {styles} from '../styles/BottomStyles';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import {useRef} from 'react';
 import Signup from './Signup';
-import {useState} from 'react';
 
-export default function Bottom(props: { closeLoginSheet: any; navigation: any; }) {
-  const signupSheet = useRef();
-  const [isPopupTrue, setPopupTrue] = useState(false);
+type Props = {
+  navigation: any;
+  closeLoginSheet: () => void;
+};
+export default function Bottom(props: Props) {
+  const signupSheet: RBSheet | null | undefined | any = useRef();
 
   const _openSignUpSheet = () => {
     signupSheet.current.open();
@@ -37,7 +39,7 @@ export default function Bottom(props: { closeLoginSheet: any; navigation: any; }
       </TouchableOpacity>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
-          If you don't have an acount,{' '}
+          If you don't have an account,{' '}
           <Text style={styles.link} onPress={_openSignUpSheet}>
             create one
           </Text>
@@ -61,14 +63,6 @@ export default function Bottom(props: { closeLoginSheet: any; navigation: any; }
             closeLoginSheet={props.closeLoginSheet}
             navigation={props.navigation}
           />
-          {isPopupTrue && (
-            <View style={styles.overlay}>
-              <Image
-                style={styles.imageSmall}
-                source={require('../assets/images/loading.gif')}
-              />
-            </View>
-          )}
         </RBSheet>
       </View>
     </View>

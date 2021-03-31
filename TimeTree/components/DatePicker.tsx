@@ -29,7 +29,7 @@ const MyDatePicker = (props: Props) => {
   };
   const cancel = () => {
     setShow(false);
-    props.setBirthday('');
+    props.setBirthday('Not Set');
   };
   const showDatepicker = () => {
     formatDate(date);

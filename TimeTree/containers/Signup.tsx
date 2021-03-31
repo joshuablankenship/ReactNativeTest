@@ -5,12 +5,22 @@ import {styles} from '../styles/SignupStyles';
 import CreateProfile from './CreateProfile';
 interface Props {
   navigation: any;
+  closeSignupSheet: () => void;
+  closeLoginSheet: () => void;
+  openSignupSheet: () => void;
 }
-export default class Signup extends Component<Props> {
-  createProfileSheet: RBSheet | null | undefined;
-  constructor(props) {
+type MyState = {
+  email: string;
+  password: string;
+  isPopupTrue: boolean;
+  errorEmail: string;
+  errorPassword: string;
+  hasErrors: boolean;
+};
+export default class Signup extends Component<Props, MyState> {
+  createProfileSheet: RBSheet | null | undefined | any;
+  constructor(props: Props | Readonly<Props>) {
     super(props);
-
     this.state = {
       email: '',
       password: '',
@@ -20,9 +30,9 @@ export default class Signup extends Component<Props> {
       hasErrors: false,
     };
   }
-  validate = text => {
+  validate = (text: string) => {
     console.log(text);
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let reg = /^\w+([\\.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (reg.test(text) === false) {
       return false;
     } else {
@@ -30,27 +40,29 @@ export default class Signup extends Component<Props> {
     }
   };
   _checkForErrors = () => {
-    let hasErrorsEmail = this.validate(this.state.email) == false || this.state.email.length ==0 
-    let hasErrorsPassword = this.state.password.length < 8|| this.state.password.length > 32;
+    let hasErrorsEmail =
+      this.validate(this.state.email) === false ||
+      this.state.email.length === 0;
+    let hasErrorsPassword =
+      this.state.password.length < 8 || this.state.password.length > 32;
     let emailError = '';
-    let passwordError= '';
+    let passwordError = '';
     if (hasErrorsEmail && hasErrorsPassword) {
       emailError = 'Please Enter a valid email address';
-      passwordError= 'Please Enter a valid password';
-    }else if(hasErrorsPassword && !hasErrorsEmail){
+      passwordError = 'Please Enter a valid password';
+    } else if (hasErrorsPassword && !hasErrorsEmail) {
       emailError = '';
-      passwordError= 'Please Enter a valid password';
-    }else if(hasErrorsEmail && !hasErrorsPassword){
+      passwordError = 'Please Enter a valid password';
+    } else if (hasErrorsEmail && !hasErrorsPassword) {
       emailError = 'Please Enter a valid email address';
-      passwordError= '';
+      passwordError = '';
     }
-    console.log(this.state.password + this.state.errorEmail)
+    console.log(this.state.password + this.state.errorEmail);
 
     this.setState({errorEmail: emailError, errorPassword: passwordError});
 
-    if(!hasErrorsEmail && !hasErrorsPassword) {
+    if (!hasErrorsEmail && !hasErrorsPassword) {
       this.createProfileSheet.open();
-
     }
   };
   _onPressButtonGoogle = async () => {
@@ -111,8 +123,8 @@ export default class Signup extends Component<Props> {
             onChangeText={text => this.setState({password: text})}
             value={this.state.password}
           />
-           <Text style={styles.error}>{this.state.errorPassword}</Text>
-          
+          <Text style={styles.error}>{this.state.errorPassword}</Text>
+
           <TouchableOpacity
             style={styles.buttonGreen}
             onPress={this._openProfileSheet}>
