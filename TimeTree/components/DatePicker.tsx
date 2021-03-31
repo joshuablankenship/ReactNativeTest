@@ -9,6 +9,10 @@ import {
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {styles} from '../styles/CreateProfileStyles';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+var platform = Platform.OS === 'ios';
+
 type Props = {
   birthday: string;
   setBirthday: (text: string) => void;
@@ -66,9 +70,9 @@ const MyDatePicker = (props: Props) => {
           presentationStyle="overFullScreen">
           <View style={styles.modalBackground}>
             <View style={styles.modalForeground}>
-              <View style={styles.modal}>
+            {platform ? <View style={styles.modal}>
                 <Text style={styles.textDate}>{props.birthday}</Text>
-              </View>
+              </View>: <View></View>}
               <View />
               <View style={styles.modalForeground}>
                 <DateTimePicker

@@ -58,9 +58,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bottom: {
-    justifyContent: 'flex-end',
     alignItems: 'stretch',
-    width: '150%',
+    justifyContent: 'center',
+    marginTop: 50,
+    marginHorizontal: -40,
   },
   buttonText: {
     color: 'white',

@@ -3,6 +3,7 @@ import {Switch} from 'react-native';
 import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {styles} from '../styles/CreateProfileStyles';
 import MyDatePicker from '../components/DatePicker';
+import {ScrollView} from 'react-native';
 interface Props {
   navigation: any;
   openProfileSheet: any;
@@ -54,7 +55,7 @@ export default class CreateProfile extends Component<Props, State> {
 
   render() {
     return (
-      <View style={styles.sheetHeader}>
+      <ScrollView contentContainerStyle={styles.sheetHeader}>
         <Text style={styles.title}> Edit Profile</Text>
         <Image
           style={styles.image}
@@ -103,31 +104,32 @@ export default class CreateProfile extends Component<Props, State> {
               value={this.state.displayBirthday}
             />
           </View>
-        </View>
-        <View style={styles.bottom}>
-          <TouchableOpacity
-            disabled={
-              this.state.name.length === 0 || this.state.birthday === 'Not Set'
-            }
-            style={styles.buttonGreen}
-            onPress={() => {
-              this.setState({isPopupTrue: true});
-              setTimeout(() => {
-                this._closeProfileSheet();
-                this.props.closeSignupSheet();
-                this.props.closeLoginSheet();
-              }, 1000);
-            }}>
-            <Text
-              style={
+          <View style={styles.bottom}>
+            <TouchableOpacity
+              disabled={
                 this.state.name.length === 0 ||
                 this.state.birthday === 'Not Set'
-                  ? styles.textDark
-                  : styles.buttonText
-              }>
-              Confirm
-            </Text>
-          </TouchableOpacity>
+              }
+              style={styles.buttonGreen}
+              onPress={() => {
+                this.setState({isPopupTrue: true});
+                setTimeout(() => {
+                  this._closeProfileSheet();
+                  this.props.closeSignupSheet();
+                  this.props.closeLoginSheet();
+                }, 1000);
+              }}>
+              <Text
+                style={
+                  this.state.name.length === 0 ||
+                  this.state.birthday === 'Not Set'
+                    ? styles.textDark
+                    : styles.buttonText
+                }>
+                Confirm
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
         {this.state.isPopupTrue && (
           <View style={styles.overlay}>
@@ -137,7 +139,7 @@ export default class CreateProfile extends Component<Props, State> {
             />
           </View>
         )}
-      </View>
+      </ScrollView>
     );
   }
 }
